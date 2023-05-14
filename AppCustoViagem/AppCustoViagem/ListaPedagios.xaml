@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Lista dos Pedágios"
+             x:Class="AppCustoViagem.ListaPedagios">
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+
+            <Label Text="Selecione para Remover" FontSize="Title" HorizontalTextAlignment="Center" />
+
+            <Label x:Name="lbl_msg_lista_vazia"
+                   Text="Nenhum pedágio adicionado ainda :("
+                   IsVisible="False" />
+
+            <!--ListView é pra visualizar listas.
+            Pra eu organizar dados dentro de um ListView, eu tenho que definir
+            um ItemTemplate, e dentro dele eu chamo o DataTemplate, que pede 
+            pra eu criar uma celula de visualização, e dentro dela eu
+            declaro um menu de contexto.-->
+            <ListView x:Name="lst_lista_pedagios"
+                      Footer=""
+                      BackgroundColor="#fff"
+                      SeparatorVisibility="Default">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Remover" Clicked="MenuItem_Clicked"></MenuItem>
+                            </ViewCell.ContextActions>
+
+                            <StackLayout Orientation="Vertical">
+                                <!--Ta Horizontal pois fica um do lado do outro-->
+                                    <StackLayout Orientation="Horizontal"
+                                             HorizontalOptions="FillAndExpand"
+                                             Padding="5">
+
+                                    <Label Text="{Binding NroPedagio}"
+                                           TextColor="Red"
+                                           HorizontalOptions="Start"
+                                           FontSize="Large" />
+
+                                    <Label Text="{Binding Valor}"
+                                           FontSize="Large"/>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Somar Pedágios"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    Clicked="Button_Clicked" />
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

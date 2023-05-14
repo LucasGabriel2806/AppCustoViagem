@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCustoViagem.App">
+    
+    <!--
+    Model:Estrutura dos dados que eu uso. Ele conversa com algum repositório 
+    de daods, seja um bd ou serviço online. Ele é a descrição do meu modelo de dados.
+    ViewModel:Faz a trocad de dados entre o model e o view
+    View:Interface Gráfica, arquivos xaml e xaml.cs
+    
+    Esse padrão MVVM serve pra separar bem o trabalho do pessoal do front e back end.
+    Ajuda em projetos grandes com uma equipe multidisciplinar. Eu posso ter profissionais
+    na view, ou na model e assim por diante
+    -->
+    
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <Style x:Key="plainButton" TargetType="Button">
+                <!--x:Key="Nome do Estilo" TargeType="Qual componente será aplicado"-->
+                <Setter Property="BackgroundColor" Value="#eee"/>
+                <!--Property="Propriedade a ser alterada" Value="valor a ser alterado"-->
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style x:Key="Titulo" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="#3F51B5"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+
+            <Style x:Key="LabelRotulo" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="TextEntrada" TargetType="Entry">
+                <Setter Property="TextColor" Value="Accent"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+            </Style>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+    
+    
+</Application>
